@@ -9,13 +9,13 @@ public class Cuenta {
             this.saldo -= monto;
         }
     }
-    public void depositarDinero(double monto){
-        saldo += monto;
+    public void depositarDinero(Cuenta c, double monto){
+        c.saldo += monto;
     }
 
     public void transferirDinero(Cuenta c2, double monto) throws Exception{
         this.retirarDinero(monto);
-        c2.depositarDinero(monto);
+        depositarDinero(c2, monto);
     }
 
     public Cuenta(int nroCuenta, double saldo) {
